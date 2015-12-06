@@ -15,4 +15,18 @@ public class StringUtil {
 
         return result;
     }
+
+    public String replaceText(String source, String searchText, String replaceText) {
+        String result = "";
+        int searchTextIndex;
+        String source_back = source;
+        while(source_back.contains(searchText)){
+            searchTextIndex =  source_back.indexOf(searchText);
+            String source_front = source_back.substring(0, searchTextIndex);
+            source_back = source_back.substring(searchTextIndex + searchText.length());
+            result = result + source_front + replaceText;
+        }
+        result += source_back;
+        return result;
+    }
 }

@@ -36,7 +36,15 @@ public class StringUtilTest {
         }catch (IllegalArgumentException e){
             return;
         }
+    }
 
+    @Test
+    public void ReplaceText(){
+        assertEquals("ab22efg", stringUtil.replaceText("abcdefg", "cd", "22"));
+        assertEquals("abefg", stringUtil.replaceText("abcdefg", "cd", ""));
+        assertEquals("cccd",stringUtil.replaceText("abcd", "ab", "cc"));
+        assertEquals("cdcdcd", stringUtil.replaceText("ababab", "ab", "cd"));
+        assertEquals("abc", stringUtil.replaceText("abc", "33", "dd"));
     }
 
 }
